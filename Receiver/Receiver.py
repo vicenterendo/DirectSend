@@ -57,17 +57,10 @@ while True:
                   code = code + client.recv(1024)"""
             
 
-            print("=======================")
-            filename = str(input("File path: "))
-
-
-            print("=======================")
+            filename = client.recv(1024).decode('utf-8')
             print(f"[*] Selected filename {filename}")
-
-            
             
             print("=======================")
-            print(f"[*] File content received")
             with open(f"{filename}", "wb") as file:
                   ft = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                   ft.bind(('192.168.1.120', 10554))
@@ -94,8 +87,8 @@ while True:
 
                   ftc.close()
                   
-
-
+                  print("=======================")
+                  print(f"[*] File content received")
                   print("\n=======================")
                   print(f"[!] Data saved succesfully")
                   print("=======================")

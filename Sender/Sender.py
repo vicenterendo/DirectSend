@@ -77,7 +77,7 @@ path = input(f"[*] Please insert file path --> ")
 
 
 print("=======================")
-filename = input(f"[*] What name should the file have on Vizzeer's PC? --> ")
+filename = input(f"[*] What name should the file have on the receiver's PC? --> ")
 client.send(filename.encode('utf-8'))
 
 
